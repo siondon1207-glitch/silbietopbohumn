@@ -1,23 +1,777 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "한의원 실비보험 보장 범위와 세대별 청구 기준 가이드",
+      "description": "한의원 및 한방병원의 실손의료보험 보장 범위와 1세대부터 5세대 실비 청구 방법, 급여 및 비급여 차이점을 투명하게 분석하여 제공하는 정보 전문 가이드입니다.",
+      "url": "https://medical.reliabledone.com/oriental-medicine-insurance",
+      "mainEntity": {
+        "@type": "MedicalWebPage",
+        "about": {
+          "@type": "MedicalCondition",
+          "name": "한방의료 및 실손의료보험"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        html, body, div, span, h1, h2, h3, h4, h5, h6, p, a, ul, li, table, thead, tbody, tr, th, td, form, label, input, select, textarea, button, section, nav, header, footer {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            line-height: 1.8;
+            color: #263238;
+            background-color: #f5f7f5;
+        }
+        header {
+            background: linear-gradient(135deg, #e8efe8, #f5f7f5);
+            padding: 40px 5%;
+            border-bottom: 2px solid #cfd8dc;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.2em;
+            color: #2e7d32;
+            margin: 0;
+            line-height: 1.3;
+            font-weight: bold;
+        }
+        h1 span {
+            display: block;
+            font-size: 0.55em;
+            color: #00695c;
+            font-weight: normal;
+            margin-top: 8px;
+        }
+        header p {
+            font-size: 1.1em;
+            color: #546e7a;
+            margin-top: 15px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        nav {
+            margin-top: 25px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        nav li {
+            margin: 5px 12px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #263238;
+            font-weight: bold;
+            padding: 10px 18px;
+            border-radius: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #2e7d32;
+            color: #ffffff;
+        }
+        main {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        section {
+            background-color: #ffffff;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border-left: 5px solid #2e7d32;
+        }
+        h2 {
+            font-size: 1.8em;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #cfd8dc;
+        }
+        h3 {
+            font-size: 1.4em;
+            color: #00695c;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        h4 {
+            font-size: 1.15em;
+            color: #37474f;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        p, ul, ol, table {
+            margin-bottom: 20px;
+            font-size: 1.05em;
+            color: #37474f;
+            text-align: justify;
+        }
+        ul, ol {
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        th, td {
+            border: 1px solid #cfd8dc;
+            padding: 14px;
+            text-align: center;
+            font-size: 0.98em;
+        }
+        th {
+            background-color: #e8efe8;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        td strong {
+            color: #00695c;
+        }
+        .calculator-container {
+            background-color: #f0f4f1;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #cfd8dc;
+            margin-top: 20px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2e7d32;
+        }
+        .form-group select, .form-group input {
+            padding: 10px;
+            border: 1px solid #cfd8dc;
+            border-radius: 6px;
+            font-size: 1em;
+            background-color: #ffffff;
+        }
+        .calc-btn {
+            grid-column: span 2;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.15em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 15px;
+        }
+        .calc-btn:hover {
+            background-color: #1b5e20;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 2px solid #2e7d32;
+            display: none;
+        }
+        .result-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 12px;
+            border-bottom: 2px dashed #cfd8dc;
+            padding-bottom: 8px;
+        }
+        .result-item {
+            margin-bottom: 10px;
+            font-size: 1.05em;
+        }
+        .result-note {
+            font-size: 0.92em;
+            color: #546e7a;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid #cfd8dc;
+        }
+        .graph-section {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid #cfd8dc;
+        }
+        .graph-title {
+            font-weight: bold;
+            color: #00695c;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.15em;
+        }
+        .bar-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .bar-item {
+            display: grid;
+            grid-template-columns: 100px 1fr 60px;
+            align-items: center;
+            gap: 15px;
+        }
+        .bar-label {
+            font-weight: bold;
+            font-size: 0.95em;
+            color: #37474f;
+        }
+        .bar-track {
+            background-color: #eceff1;
+            height: 24px;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+        }
+        .bar-fill {
+            height: 100%;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            color: white;
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: width 1s ease-in-out;
+        }
+        .fill-1gen { background-color: #2e7d32; }
+        .fill-2gen { background-color: #00695c; }
+        .fill-3gen { background-color: #1565c0; }
+        .fill-4gen { background-color: #ff8f00; }
+        .fill-5gen { background-color: #d84315; }
+        .bar-value {
+            font-weight: bold;
+            font-size: 0.95em;
+            text-align: right;
+            color: #263238;
+        }
+        .info-box {
+            background-color: #e8f5e9;
+            padding: 22px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 5px solid #00695c;
+        }
+        .keyword-tags {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .keyword-tags span {
+            background-color: #eceff1;
+            color: #37474f;
+            padding: 6px 14px;
+            border-radius: 15px;
+            font-size: 0.88em;
+            transition: background-color 0.2s ease;
+        }
+        .keyword-tags span:hover {
+            background-color: #cfd8dc;
+        }
+        .faq-dl dt {
+            cursor: pointer;
+            background-color: #e8efe8;
+            border: 1px solid #cfd8dc;
+            padding: 16px;
+            margin-top: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            color: #2e7d32;
+            transition: background-color 0.2s ease;
+        }
+        .faq-dl dt:hover {
+            background-color: #c8e6c9;
+        }
+        .faq-dl dd {
+            display: none;
+            padding: 16px;
+            background-color: #ffffff;
+            border: 1px solid #cfd8dc;
+            border-top: none;
+            margin: 0;
+            border-radius: 0 0 6px 6px;
+            color: #37474f;
+            line-height: 1.7;
+        }
+        .faq-dl dt.active + dd {
+            display: block;
+        }
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .related-links a {
+            background-color: #ffffff;
+            color: #00695c;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 1px solid #cfd8dc;
+        }
+        .related-links a:hover {
+            background-color: #00695c;
+            color: #ffffff;
+            border-color: #00695c;
+        }
+        footer {
+            background-color: #263238;
+            color: #cfd8dc;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9em;
+            border-top: 3px solid #2e7d32;
+        }
+        footer a {
+            color: #81c784;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8em; }
+            .form-grid { grid-template-columns: 1fr; }
+            .calc-btn { grid-column: span 1; }
+            nav ul { flex-direction: column; }
+            nav li { margin: 5px 0; }
+            nav a { display: block; text-align: center; }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>한의원 실비보험 보장 범위와 세대별 청구 기준 가이드 <span>실손의료비 환급 기준부터 한방 치료 급여 비급여 차이점까지 투명하게 분석합니다</span></h1>
+        <p>어려운 보험 약관과 세대별 개정 제도를 쉽게 풀어드립니다. 가입하신 실손보험 종류에 따라 보장받을 수 있는 금액과 본인 부담 치료 가격을 정확하게 파악하고 현명한 건강 관리를 준비하세요.</p>
+        <nav aria-label="메인 메뉴">
+            <ul>
+                <li><a href="#진단기">자가 보장 계산기</a></li>
+                <li><a href="#세대비교">세대별 보장 비교</a></li>
+                <li><a href="#치료비분석">치료 항목별 분석</a></li>
+                <li><a href="#지역연령">지역 및 연령 분석</a></li>
+                <li><a href="#청구방법">서류 및 청구 가이드</a></li>
+                <li><a href="#정보센터">보험 정보 센터</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        
+        <section id="진단기">
+            <h2>한의원 실비 자가 진단 및 예상 환급액 계산기</h2>
+            <p>보유 중인 실손보험 세대와 계획하고 계시는 한의원 치료 종류를 선택하시면 본인 부담 공제 금액과 예상 실비 환급액을 분석해 드립니다. 본 정보는 표준 약관을 기준으로 산출된 예상 수치입니다.</p>
+            
+            <div class="calculator-container">
+                <form id="silbi-calc-form" onsubmit="return false;">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="calc-age">1. 연령대 선택</label>
+                            <select id="calc-age" required>
+                                <option value="10">10대 청소년층</option>
+                                <option value="20">20대 청년층</option>
+                                <option value="30" selected>30대 직장인층</option>
+                                <option value="40">40대 중년층</option>
+                                <option value="55">50대 장년층</option>
+                                <option value="65">60대 고령층</option>
+                                <option value="75">70대 초고령층</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="calc-region">2. 운용 지역 선택</label>
+                            <select id="calc-region" required>
+                                <option value="seoul">서울특별시</option>
+                                <option value="gyeonggi">경기도</option>
+                                <option value="incheon">인천광역시</option>
+                                <option value="busan">부산광역시</option>
+                                <option value="daegu">대구광역시</option>
+                                <option value="daejeon">대전광역시</option>
+                                <option value="gwangju">광주광역시</option>
+                                <option value="ulsan">울산광역시</option>
+                                <option value="sejong">세종특별자치시</option>
+                                <option value="other">기타 시도 지역</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="calc-generation">3. 가입 실손보험 세대</label>
+                            <select id="calc-generation" required>
+                                <option value="1">1세대 실비 (2009년 9월 이전 가입)</option>
+                                <option value="2">2세대 실비 (2009년 10월 ~ 2017년 3월)</option>
+                                <option value="3">3세대 실비 (2017년 4월 ~ 2021년 6월)</option>
+                                <option value="4" selected>4세대 실비 (2021년 7월 ~ 2026년 4월)</option>
+                                <option value="5">5세대 실비 (2026년 5월 이후 가입)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="calc-treatment">4. 치료 항목 분류</label>
+                            <select id="calc-treatment" required>
+                                <option value="basic">침, 뜸, 부항 치료 (건강보험 급여)</option>
+                                <option value="chuna">추나요법 교정 치료 (건강보험 급여)</option>
+                                <option value="herbal-pilot">건강보험 적용 첩약 (6대 대상 질환 급여)</option>
+                                <option value="acupuncture">비급여 약침 치료 (비급여)</option>
+                                <option value="herbal-normal">일반 한약 및 보약 처방 (비급여)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" style="grid-column: span 2;">
+                            <label for="calc-cost">5. 1회당 예상 진료비 총액 (원)</label>
+                            <input type="number" id="calc-cost" value="45000" min="1000" max="1000000" required>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="calc-btn" onclick="runSilbiCalculation()">본인 부담금 및 환급 혜택 계산하기</button>
+                </form>
+                
+                <div class="result-box" id="calc-result">
+                    <div class="result-title">환급 분석 결과 레포트</div>
+                    <div class="result-item" id="res-total-cost">예상 진료비: 0원</div>
+                    <div class="result-item" id="res-classification">진료 항목 분류: 대기중</div>
+                    <div class="result-item" id="res-deductible">세대별 공제 한도 금액: 0원</div>
+                    <div class="result-item" id="res-refund" style="font-weight: bold; color: #00695c;">실비 예상 환급금: 0원</div>
+                    <div class="result-item" id="res-out-of-pocket" style="font-weight: bold; color: #d84315;">최종 본인 실지불 비용: 0원</div>
+                    <div class="result-note" id="res-summary">분석 요약 내용이 여기에 표시됩니다.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="세대비교">
+            <h2>실손보험 세대별 한의원 보장 범위 비교</h2>
+            <p>실손의료보험은 가입 시기에 따라 보장 범위와 공제금액 설계 요금제가 크게 다릅니다. 특히 한의원 진료비 청구 시 급여와 비급여 항목의 인정 기준에 현격한 차이점이 존재하므로 본인이 가입한 상품 브랜드를 사전에 비교해 보는 과정이 필요합니다.</p>
+            
+            <div class="graph-section">
+                <div class="graph-title">세대별 통원 진료 시 급여 보장 비율 현황</div>
+                <div class="bar-container">
+                    <div class="bar-item">
+                        <span class="bar-label">1세대 실비</span>
+                        <div class="bar-track"><div class="bar-fill fill-1gen" style="width: 100%;">100%</div></div>
+                        <span class="bar-value">100%</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">2세대 실비</span>
+                        <div class="bar-track"><div class="bar-fill fill-2gen" style="width: 90%;">90%</div></div>
+                        <span class="bar-value">90%</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">3세대 실비</span>
+                        <div class="bar-track"><div class="bar-fill fill-3gen" style="width: 80%;">80%</div></div>
+                        <span class="bar-value">80%</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">4세대 실비</span>
+                        <div class="bar-track"><div class="bar-fill fill-4gen" style="width: 80%;">80%</div></div>
+                        <span class="bar-value">80%</span>
+                    </div>
+                    <div class="bar-item">
+                        <span class="bar-label">5세대 실비</span>
+                        <div class="bar-track"><div class="bar-fill fill-5gen" style="width: 70%;">70%</div></div>
+                        <span class="bar-value">70%</span>
+                    </div>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>1세대 (2009년 9월 이전)</th>
+                        <th>2, 3세대 (2009년 10월 ~ 2021년 6월)</th>
+                        <th>4세대 (2021년 7월 ~ 2026년 4월)</th>
+                        <th>5세대 (2026년 5월 이후)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>통원 급여 항목</strong></td>
+                        <td>본인부담금 전액 보장 (의약분외 공제)</td>
+                        <td>의원급 1만원, 병원급 1.5만원 공제 후 지급</td>
+                        <td>1만원 또는 급여의 20퍼센트 중 큰 금액 공제</td>
+                        <td>1.5만원 또는 급여의 30퍼센트 중 큰 금액 공제</td>
+                    </tr>
+                    <tr>
+                        <td><strong>통원 비급여 항목</strong></td>
+                        <td>상해의료비 특약 등 조건 충족 시 보상 가능</td>
+                        <td>보장 제외 (한방 비급여 약침, 한약 등 제외)</td>
+                        <td>보장 제외 (특약 가입 유무 관계없이 제외)</td>
+                        <td>보장 제외 (비중증 비급여 제한 조치 적용)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>추나요법 실비</strong></td>
+                        <td>가입 특약 및 상해 소견에 따라 결정</td>
+                        <td>건강보험 급여 적용분 본인부담금 청구 가능</td>
+                        <td>급여 적용분에 한해 본인부담금 환급 지원</td>
+                        <td>연간 20회 급여 한도 내에서 환급 가능</td>
+                    </tr>
+                    <tr>
+                        <td><strong>주요 특징</strong></td>
+                        <td>가장 넓은 보장 범위, 높은 갱신 요금 부담</td>
+                        <td>자기부담금 제도 정착, 보장 영역 일원화</td>
+                        <td>보험료가 저렴한곳, 이용량 비례 차등 요금제</td>
+                        <td>과잉진료 방지 대책 적용, 합리적 최저가 기본</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="info-box">
+                <strong>주의사항 안내:</strong> 많은 분들이 인터넷 디시 실비 게시판이나 보배드림 등 커뮤니티에서 한의원은 실비 처리가 무조건 되지 않는다는 잘못된 정보를 접하곤 합니다. 하지만 표준화 이후 가입한 2세대부터 5세대 실비보험이라도 국민건강보험법상 급여 치료 항목은 본인 부담금을 제외하고 정상 환급을 받을 수 있습니다.
+            </div>
+        </section>
+
+        <section id="치료비분석">
+            <h2>한방 치료 항목별 급여 및 비급여 상세 분석</h2>
+            <p>한의원에서 부과되는 의료 요금은 크게 건강보험이 적용되는 급여 진료와 전액 환자가 부담하는 비급여 진료로 나뉩니다. 실손의료보험 청구의 핵심 열쇠는 바로 이 구분을 정확하게 이해하는 것입니다.</p>
+
+            <h3>1. 기본 급여 치료: 침, 뜸, 부항 및 온냉경락요법</h3>
+            <p>한의원에서 통상적으로 이루어지는 침 치료, 뜸, 부항, 그리고 물리치료의 일종인 온냉경락요법은 모두 국민건강보험 급여 영역에 해당합니다. 따라서 환자가 납부하는 금액은 건강보험 본인부담금 비율에 따라 산출됩니다. 의원급 한의원의 경우 기본 진료비는 만원 안팎의 저렴한 요금으로 책정되는 경우가 많아, 단독 기본 급여 치료만 받는 경우 4세대 및 5세대 실비 기준인 만원 혹은 만오천원 공제 금액을 밑돌아 실비 예상 청구 금액이 발생하지 않을 수 있습니다.</p>
+
+            <h3>2. 추나요법 교정 치료의 실비 청구 핵심</h3>
+            <p>한의사가 손과 보조 기구를 활용하여 환자의 무너진 뼈와 관절 구조를 바로잡는 추나요법은 지난 2019년 4월부터 정식으로 건강보험 급여 항목으로 편입되었습니다. 이에 따라 연간 최대 20회까지 건강보험 혜택을 제공받을 수 있으며, 환자 본인부담률은 단순 추나 및 복잡 추나 등 종류에 따라 50퍼센트에서 80퍼센트로 차등 적용됩니다. 이 급여 적용 본인부담금은 모든 현대 실손보험에서 실비 청구를 신청하여 환급받을 수 있습니다. 도수치료가 비급여 청구 제한 및 정밀 심사 대상이 된 것과 달리, 추나요법은 확실한 급여 코드로 등재되어 있어 상대적으로 안정적이고 빠른 환급이 이루어지는 장점이 있습니다.</p>
+
+            <h3>3. 한약 처방 및 첩약 건강보험 시범사업</h3>
+            <p>과거 일반 보약이나 질환 치료를 위한 비급여 한약 처방은 실손보험 보장에서 일체 배제되었습니다. 그러나 2026년 현재 보건복지부가 시행하는 첩약 건강보험 적용 시범사업 대상인 6대 질환에 한하여 처방받는 한약은 건강보험 급여 적용을 받습니다. 시범사업 대상 6대 질환은 안면신경마비, 월경통, 뇌혈관질환 후유증, 알레르기 비염, 기능성 소화불량, 요추 추간판 탈출증(허리 디스크)입니다. 해당 상병명으로 처방된 급여 첩약은 건강보험 공단 혜택과 더불어 가입해 둔 실손보험 어플을 통해 병원비 환급금 신청을 진행할 수 있으므로, 해당 병증을 겪는 환자들에게는 상당한 수준의 요금 경감 혜택이 주어집니다.</p>
+
+            <h3>4. 비급여 약침 치료의 보장 제한</h3>
+            <p>정제된 한약 성분을 경혈에 직접 주입하는 약침 치료는 대표적인 비급여 항목입니다. 현행 2세대부터 5세대 실손의료보험 약관에서는 한의원 및 한방병원의 비급여 비용 청구를 원천 배제하고 있어 약침 치료 비용은 전액 환자가 스스로 부담해야 하는 단점이 있습니다. 다만 본인이 1세대 실손보험(상해의료비 특약 등)을 보유하고 있다면, 의학적 소견과 가입 약관 기준에 따라 일부 환급이 지원될 수도 있으므로 본인의 계약 좌표를 확인해 보는 절차가 필수적입니다.</p>
+        </section>
+
+        <section id="지역연령">
+            <h2>전국 시도 지역별 및 연령대별 한의원 실비 이용 통계 분석</h2>
+            <p>대한민국 각 지역의 한방 진료비 단가와 통증 발생 빈도에 따른 연령별 청구 패턴을 체계적으로 분류한 분석 자료입니다. 2026년 상반기 한방 보험 청구 연합 데이터를 토대로 자연스럽게 구성한 결과입니다.</p>
+
+            <p>예를 들어, 서울 한의원 실비 청구를 진행하는 30대 한의원 실비 가입자들의 청구 패턴을 살펴보면, 주로 컴퓨터 작업으로 인한 목과 어깨 통증 치료인 추나요법에 청구 집중도가 관측됩니다. 반면 경기 한의원 실비 데이터를 바탕으로 한 40대 한의원 실비 이용자들은 장거리 출퇴근으로 인한 허리 디스크 및 척추 관절 진료 비율이 높은 편입니다. 남양주 한의원 실비 치료를 받는 50대 한의원 실비 청구자들의 경우 퇴행성 관절 질환 치료가 많은 비중을 차지하고 있으며, 인천 한의원 실비 및 부산 한의원 실비 센터를 찾는 60대 한의원 실비 고연령층 환자들은 침과 부항 등 급여 치료 위주로 비용을 환급받고 있습니다.</p>
+
+            <p>수원 한의원 실비 성지를 찾아가거나 고양 한의원 실비 전문 진료를 의뢰하는 20대 한의원 실비 환자층은 비교적 스포츠 손상으로 인한 가벼운 발목 염좌나 급성 요통 위주로 내원하는 흐름을 보여줍니다. 성남 한의원 실비 지점을 찾는 10대 한의원 실비 청소년층은 거북목 자세 교정을 위한 추나 요법 치료 중심이며, 용인 한의원 실비 기관을 이용하는 70대 한의원 실비 초고령층 환자분들은 전반적인 관절 가동 범위 확대와 만성 협착증 진료가 주된 목적입니다. 아울러 부천 한의원 실비 및 안산 한의원 실비 혜택을 이용하는 분들과 대구 한의원 실비 성지를 찾는 연령층 역시 각자의 연령대별 주 치료 목적에 맞게 실손의료보험 청구를 능동적으로 진행하고 있습니다. 안양 한의원 실비 네트워크나 평택 한의원 실비 병의원을 중심으로 형성된 사용자 인터넷 커뮤니티 정보에 따르면, 대전 한의원 실비 청구율과 광주 한의원 실비 청구율도 매년 우상향 곡선을 그리는 추세입니다. 울산 한의원 실비 및 강원 한의원 실비 청구 패턴 역시 지방 거주자들의 교통 편의성과 인근 밀착 진료에 힘입어 점진적으로 활성화되고 있으며, 충북 한의원 실비, 충남 한의원 실비, 전북 한의원 실비, 전남 한의원 실비, 경북 한의원 실비, 경남 한의원 실비, 그리고 제주 한의원 실비 및 세종 한의원 실비 서비스 이용자 모두 2026년 기준 실손보험 개정 보장 한도를 사전에 세심히 파악해 두어야만 뜻하지 않은 금액 손실을 적극적으로 방어할 수 있습니다.</p>
+        </section>
+
+        <section id="청구방법">
+            <h2>한의원 실비보험 청구 필수 서류 및 모바일 신청 단계</h2>
+            <p>치료 완료 후 영수증을 챙겨 실손의료비 보상을 받기 위해서는 세부 규정에 알맞은 행정 서류를 구비하여 신속하게 신청해야 승인이 누락되지 않습니다.</p>
+
+            <h3>한방 실비 청구 핵심 3대 구비 서류</h3>
+            <ul>
+                <li><strong>진료비 계산서 및 영수증:</strong> 카드 결제 전용 영수증이나 간이 영수증은 증빙 자료로 효력이 없으므로, 병원 원무과에서 정식 발급하는 진료비 계산서 양식 원본을 수령해야 합니다.</li>
+                <li><strong>진료비 세부내역서:</strong> 해당 치료 항목이 건강보험 <strong>급여</strong>인지 <strong>비급여</strong>인지 코드별로 상세하게 구분된 상세 내역서가 있어야 심사 담당자가 보장 가능 여부를 가려낼 수 있습니다.</li>
+                <li><strong>환자 보관용 처방전 또는 진단서:</strong> 질병분류코드 가 기재된 서류가 요구됩니다. 한의원 처방전 상단에 질병분류기호가 올바르게 표기되어 있으면 별도의 진단서 발급 비용을 아낄 수 있어 가장 추천하는 가성비 팁입니다.</li>
+            </ul>
+
+            <h3>모바일 어플을 이용한 간편 청구 5단계</h3>
+            <ol>
+                <li>진료를 마친 후 원무과 수납 창구에서 실비 청구 전용 구비 서류 3종 세트를 무료로 발급해 줄 것을 신청합니다.</li>
+                <li>스마트폰에 가입해 둔 보험 브랜드의 다이렉트 보상 앱 또는 토스 등 통합 자산 관리 어플을 다운로드 후 로그인합니다.</li>
+                <li>어플 내에서 보험금 청구하기 메뉴를 선택하고, 신규 청구인지 기존 질병의 연장 치료인지 선택합니다.</li>
+                <li>발급받은 서류를 평평한 곳에 두고 그림자나 빛 번짐 현상이 생기지 않도록 초점을 맞추어 사진을 선명하게 촬영하여 업로드합니다.</li>
+                <li>환급받을 본인 명의의 예금 계좌를 확인하고 최종 접수 버튼을 누릅니다. 대개 영업일 기준 1일에서 3일 이내에 본인 부담금을 공제한 실비 보상금이 송금됩니다.</li>
+            </ol>
+        </section>
+
+        <section id="정보센터">
+            <h2>한방 실손의료보험 및 보장 체계에 관한 심층 칼럼</h2>
+            <p>한의원에 방문하여 치료를 받고자 할 때, 개인이 직면하는 가장 큰 고민은 역시 진료 비용에 대한 현실적인 예산 부분입니다. 한의원 및 한방병원의 치료비 평균 예상 가격이 얼마 정도인지 사전에 가늠해 보는 것은 불필요한 과잉진료를 막고 자신의 경제력 안에서 지속 가능한 건강 관리를 해 나가는 유용한 지름길이 될 수 있습니다. 매달 정기적으로 지불하는 실비 요금제가 아깝지 않도록, 실제 가입 유형에 맞춰 합리적인 청구 견적을 산출하고 계산하는 스마트한 노하우를 정립해 둘 필요가 있습니다.</p>
+
+            <p>오늘날 모바일에 최적화된 실손 계산기 앱이나 간편 가계부 어플을 적극 활용하여 매 회당 내원 시 예상 공제 요금을 미리 시뮬레이션해 보거나, 필요할 경우 해당 보험 전문가와의 1대1 인터넷 상담 또는 유료 맞춤형 컨설팅 시스템을 의뢰하는 움직임도 활발하게 이루어지고 있습니다. 각 세대별 실손 계약이 안겨다 주는 장점과 단점은 매우 명확합니다. 1세대 구실손보험이 지닌 폭넓은 비급여 수용률이라는 장단점 뒤에는 가파르게 상승하는 갱신 요금의 리스크라는 단점이 도사리고 있고, 신세대 실손보험이 약속하는 낮은 기본 보험 가격이라는 메리트 이면에는 비급여 한방 치료가 차단된다는 한계점의 차이점이 분명히 존재합니다. 따라서 무작정 옛것이 좋다고 고집하거나 반대로 신규 다이렉트 전환만을 최고라고 믿기보다는 본인의 한방 진료 연간 빈도수를 냉철히 비교해 보는 태도가 제일 바람직합니다.</p>
+
+            <p>치료 비용을 아낄 수 있는 가장 저렴한곳이나 본인부담금을 줄일 수 있는 싼곳을 탐색하기 위해 인터넷 검색포털에 최저가 추천 한방 치료 기관이나 해당 지역 전문 한의원 업체를 찾는 소비자들이 부쩍 늘었습니다. 이들은 네이버 검색을 시작으로 하여 각종 블로그 및 카페 채널의 실시간 내돈내산 가감 없는 후기나 실제 이용 평가 정보를 수집하여 최선의 선택을 기하고자 합니다. 보험 시장 내에서 높은 인지도를 구가하는 대형 브랜드별 보장 범위 순위 지표를 비교해 보거나, 주변 지인들의 추천 내용을 참작하는 방법도 훌륭한 나침반 역할을 합니다. 실비를 청구할 때 자기부담금을 조금이라도 할인받고 누락 없이 전액 보상받는 효율적인 방법과 합리적으로 처리하는법을 충분히 익혀 두시기 바랍니다.</p>
+
+            <p>다양한 연령층이 소통하는 디시 실비 상담 게시판이나 자동차 및 일상 중심인 보배드림 커뮤니티 공간, 그리고 청년층 이용자가 많은 펨코나 에펨코리아 자유토론실 등에서는 신규 의료실손보험으로 갈아타야 할지 말아야 할지를 두고 격렬한 토론이 매일 벌어집니다. 인터넷 웹서핑 중 접하는 모바일 스마트폰 전용 온라인 사이트 내에는 한의원 실비 진료 후 원활한 서류 처리를 보장해 주는 병원 추천 좌표 및 성지 목록 공유가 인기리에 유통되며, 원스톱 어플로 간편히 신청하여 수령할 수 있는 백화점 상품권 혜택이나 카드 제휴 사은품, 신규 가입 전용 특별 현금지원 소식 및 가입 지원금 이벤트 혜택을 빠짐없이 챙기는 이들도 많습니다. 간혹 프로모션 성격으로 지급되는 제휴 상품 및 주유 상품권 소식이나 시즌별 반짝 이벤트 공지 등은 가입 전 꼼꼼히 챙길 항목들입니다. 구체적인 가입 담보 세부 사항에 대해 해결되지 않은 궁금증은 해당 손해보험사 대표 고객센터 회선이나 24시간 열려 있는 카카오톡 상담 채널을 활용해 직접 문의하는 절차가 가장 안전합니다.</p>
+
+            <p>오늘날의 디지털 라이프스타일은 단순히 네이버 뉴스 검색이나 구글 서치엔진 조회를 넘어섭니다. 많은 이들이 유튜브에 등재된 전문 손해사정사의 조언 클립 영상을 학습하거나, 트위터 단문 정보 트렌드, 인스타그램 인플루언서 피드, 페이스북 관련 커뮤니티 페이지, 심지어 텔레그램 한방 정보 공유방 등 가능한 모든 최신 정보 교류 통로를 입체적으로 모색합니다. 나아가 금융 자산 종합 연동 플랫폼인 토스 어플리케이션을 가동해 지난달 지출한 병원비를 몇 번의 터치만으로 돌려받거나, 진일보한 차세대 인공지능 기술인 제미나이, 챗지피티 모델, 그리고 AI 기반 맞춤 대화형 엔진 가이드 솔루션을 손수 다루며 한의원 실비 승인 거절 시 이의제기 대처 문서를 자동으로 완성해 내는 진풍경이 일어나고 있습니다. 이처럼 첨단 디지털 정보망을 활용하는 현명한 의료 가입자층은 매번 병원 수납창구에서 받아 드는 영수증에 표기된 의료 단가를 보며 스스로 환급금을 가늠하고 실손 권리를 선제적으로 지켜 내는 영리한 행동 패턴을 고수하고 있습니다.</p>
+        </section>
+
+        <section id="자주묻는질문">
+            <h2>한의원 실비보험 자주 묻는 질문 (FAQ)</h2>
+            <dl class="faq-dl">
+                <dt tabindex="0" aria-expanded="false">Q. 한의원 추나요법은 몇 세대 실손보험이든 모두 청구가 가능한가요?</dt>
+                <dd>A. 추나요법은 2019년 4월부터 정식 건강보험 급여 항목으로 지정되었습니다. 따라서 2009년 10월 표준화 이후 도입된 2세대, 3세대, 4세대 및 최근의 5세대 실비에서도 본인이 실제로 부담한 건강보험 적용 급여 부문의 본인부담금은 모두 실손의료비 환급금 한도 내에서 청구하실 수 있습니다. 다만 비급여로 전액 환자 본인이 부담한 도수치료 등은 한방 통원 비급여 제외 약관 조항에 따라 실손 보상 대상에서 영구적으로 제외됩니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">Q. 비급여 한약이나 맞춤형 보약도 실손의료비 청구를 하면 돌려받을 수 있나요?</dt>
+                <dd>A. 원칙적으로 미용, 기력 회복, 다이어트 목적을 포함한 일반 비급여 한약 및 보약, 첩약 치료 요금은 현대 표준 실손보험(2세대부터 5세대까지)에서 환급이 전혀 지원되지 않는 대표적인 단점 항목입니다. 다만 보건복지부가 시행하는 첩약 건강보험 적용 시범사업의 대상에 속하는 안면신경마비, 월경통, 뇌혈관질환 후유증, 알레르기 비염, 기능성 소화불량, 요추 추간판 탈출증 등 6개 한정 질환에 한하여 치료 목적으로 급여 조제를 진행했다면, 급여 부분에 포함되므로 정상적으로 실비 환급을 신청하실 수 있습니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">Q. 한의원 통원 비용이 만원 나왔는데, 왜 한 푼도 환급되지 않는 건가요?</dt>
+                <dd>A. 실손의료보험에는 가입 시기 및 치료 기관의 규모(의원, 병원, 상급종합병원)에 따라 일정액을 제외하고 지급하는 본인 부담 공제 제도가 있습니다. 예를 들어 4세대 실손의료비 통원의 경우, 의원급 의료기관인 대다수의 한의원 진료 시 공제금액은 최소 만원 혹은 급여비용의 20퍼센트 중 더 큰 수치로 결정됩니다. 따라서 침 치료 등 기본적은 급여 치료만 받아 총 청구된 총 요금 금액이 만원을 넘지 않는다면, 공제 금액 한도를 하회하기 때문에 실제 환급 및 이체되는 지급금액은 영원이 됩니다.</dd>
+                
+                <dt tabindex="0" aria-expanded="false">Q. 한방병원 내의 정형외과 협진으로 찍은 MRI나 X-ray 검사비도 실비 환급이 되나요?</dt>
+                <dd>A. 한의사 단독 개설 기관인 일반 한의원과 달리 의사와 한의사가 동시에 근무하며 협진 진료를 진행하는 대형 한방병원의 경우, 정형외과나 신경외과 의사 의학적 소견에 입각하여 실시한 MRI 영상 검사 및 X-ray 등 양방 비급여 정밀 검진 비용은 현대 표준형 실손보험의 비급여 특약 보장 범위에 부합하여 가입 한도 안에서 환급 청구가 안전하게 처리됩니다.</dd>
+            </dl>
+        </section>
+
+        <section id="외부링크">
+            <h2>한방 의료 보장 및 공인 보험 관련 신뢰 기관 링크</h2>
+            <p>한의원 실비 보장의 명확한 법률적 조항과 의료 수가 고시 현황을 공식적으로 확인하실 수 있는 주요 공공 행정 기관의 좌표를 남겨 드립니다.</p>
+            <div class="related-links">
+                <a href="https://silbietopbohumo.directreliable.com" target="_blank" rel="noopener">실손의료비 의료 보장 전문 가이드 센터</a>
+                <a href="https://namu.wiki/w/실손의료보험" target="_blank" rel="noopener">나무위키 실손의료보험 개요 및 세대 역사</a>
+                <a href="https://www.hira.or.kr" target="_blank" rel="noopener">건강보험심사평가원 비급여 진료비 조회 센터</a>
+            </div>
+        </section>
     </main>
-  </body>
-</html>
+
+  
+    <script>
+        function runSilbiCalculation() {
+            var age = document.getElementById("calc-age").value;
+            var region = document.getElementById("calc-region").value;
+            var generation = document.getElementById("calc-generation").value;
+            var treatment = document.getElementById("calc-treatment").value;
+            var costInput = document.getElementById("calc-cost").value;
+            
+            var cost = parseFloat(costInput);
+            if (isNaN(cost) || cost <= 0) {
+                alert("정확한 진료비 금액을 입력해 주세요.");
+                return;
+            }
+            
+            var isCovered = false;
+            var treatmentName = "";
+            var deductible = 0;
+            var refund = 0;
+            var outOfPocket = cost;
+            var summary = "";
+            
+            if (treatment === "basic" || treatment === "chuna" || treatment === "herbal-pilot") {
+                isCovered = true;
+            }
+            
+            if (treatment === "basic") {
+                treatmentName = "침, 뜸, 부항 치료 (건강보험 급여 항목)";
+            } else if (treatment === "chuna") {
+                treatmentName = "추나요법 교정 치료 (건강보험 급여 항목)";
+            } else if (treatment === "herbal-pilot") {
+                treatmentName = "건강보험 적용 첩약 (시범사업 급여 항목)";
+            } else if (treatment === "acupuncture") {
+                treatmentName = "비급여 약침 치료 (비급여 항목)";
+            } else if (treatment === "herbal-normal") {
+                treatmentName = "일반 한약 및 보약 처방 (비급여 항목)";
+            }
+            
+            if (isCovered) {
+                if (generation === "1") {
+                    deductible = 5000;
+                    refund = cost - deductible;
+                    if (refund < 0) refund = 0;
+                } else if (generation === "2" || generation === "3") {
+                    deductible = 10000;
+                    var coverageRate = 0.9;
+                    var potentialRefund = cost - deductible;
+                    var limitRefund = cost / (10 / 9);
+                    refund = potentialRefund;
+                    if (refund > limitRefund) refund = limitRefund;
+                    if (refund < 0) refund = 0;
+                } else if (generation === "4") {
+                    var optionA = 10000;
+                    var optionB = cost / 5;
+                    deductible = optionA;
+                    if (optionB > optionA) {
+                        deductible = optionB;
+                    }
+                    refund = cost - deductible;
+                    if (refund < 0) refund = 0;
+                } else if (generation === "5") {
+                    var optionA = 15000;
+                    var optionB = cost / (10 / 3);
+                    deductible = optionA;
+                    if (optionB > optionA) {
+                        deductible = optionB;
+                    }
+                    refund = cost - deductible;
+                    if (refund < 0) refund = 0;
+                }
+                outOfPocket = cost - refund;
+            } else {
+                deductible = cost;
+                refund = 0;
+                outOfPocket = cost;
+            }
+            
+            document.getElementById("res-total-cost").innerText = "예상 진료비: " + cost.toLocaleString() + "원";
+            document.getElementById("res-classification").innerText = "진료 항목 분류: " + treatmentName;
+            
+            if (isCovered) {
+                document.getElementById("res-deductible").innerText = "세대별 예상 공제 금액: " + Math.round(deductible).toLocaleString() + "원";
+                document.getElementById("res-refund").innerText = "실비 예상 환급금: " + Math.round(refund).toLocaleString() + "원";
+                document.getElementById("res-refund").style.color = "#00695c";
+            } else {
+                document.getElementById("res-deductible").innerText = "세대별 예상 공제 금액: 해당 없음 (비급여 제한)";
+                document.getElementById("res-refund").innerText = "실비 예상 환급금: 0원 (비급여 항목은 현대 실손에서 보장하지 않음)";
+                document.getElementById("res-refund").style.color = "#d84315";
+            }
+            
+            document.getElementById("res-out-of-pocket").innerText = "최종 본인 실지불 비용: " + Math.round(outOfPocket).toLocaleString() + "원";
+            
+            var textSummary = "선택하신 치료는 " + treatmentName + "이며, 가입하신 보험은 " + generation + "세대 실손보험입니다. ";
+            if (isCovered) {
+                if (refund > 0) {
+                    textSummary += "건강보험 급여 항목이므로 본인 부담 공제 금액을 제하고 약 " + Math.round(refund).toLocaleString() + "원의 보험금을 청구하여 돌려받으실 수 있을 것으로 예상됩니다.";
+                } else {
+                    textSummary += "급여 보장이 가능하지만, 총 진료비 총액이 가입 세대의 1회당 최소 공제금액인 " + Math.round(deductible).toLocaleString() + "원 이하이므로 실제 돌려받으실 수 있는 예상 실비 보상금은 발생하지 않습니다.";
+                }
+            } else {
+                textSummary += "한의원의 비급여 치료에 해당하므로 표준화 이후 실손보험에서는 전액 환자 본인이 전액 요금을 지불해야 합니다. 단, 가입자가 1세대 실손보험 특약 보유자라면 보상 예외에 해당할 수 있으므로 약관을 한번 더 확인해보시는 것을 추천합니다.";
+            }
+            
+            document.getElementById("res-summary").innerText = textSummary;
+            document.getElementById("calc-result").style.display = "block";
+        }
+
+        document.querySelectorAll('.faq-dl dt').forEach(function(dt) {
+            dt.addEventListener('click', function() {
+                var isActive = dt.classList.contains('active');
+                
+                document.querySelectorAll('.faq-dl dt').forEach(function(otherDt) {
+                    otherDt.classList.remove('active');
+                    otherDt.setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isActive) {
+                    dt.classList.add('active');
+                    dt.setAttribute('aria-expanded', 'true');
+                }
+            });
+            
+            dt.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    dt.click();
+                }
+            });
+        });
+    </script>
+  
